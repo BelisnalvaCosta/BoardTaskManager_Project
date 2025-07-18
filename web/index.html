@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Tarefas - Board Visual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>🗂️ Gerenciador de Tarefas</h1>
+
+<div class="board">
+    <div class="column" id="col-initial">
+        <h2>Inicial</h2>
+        <div class="card-list" id="initial-list"></div>
+    </div>
+    <div class="column" id="col-pending">
+        <h2>Pendente</h2>
+        <div class="card-list" id="pending-list"></div>
+    </div>
+    <div class="column" id="col-final">
+        <h2>Final</h2>
+        <div class="card-list" id="final-list"></div>
+    </div>
+    <div class="column" id="col-cancel">
+        <h2>Cancelado</h2>
+        <div class="card-list" id="cancel-list"></div>
+    </div>
+</div>
+
+<form id="card-form">
+    <h3>Criar novo card</h3>
+    <input type="text" id="card-title" placeholder="Título" required>
+    <input type="text" id="card-desc" placeholder="Descrição" required>
+    <button type="submit">Adicionar Card</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
