@@ -40,11 +40,14 @@ public class CardEntity {
     }
 
     public Object getBlockReason() {
+        return null;
     }
 
     public Object getBoardColumnName() {
+        return null;
     }
 
     public Object isBlocked() {
+        return null;
     }
 }

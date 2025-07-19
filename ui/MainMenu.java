@@ -1,24 +1,24 @@
 package br.com.dio.board.ui;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import br.com.dio.board.InitDatabase;
 import br.com.dio.board.config.ConnectionConfig;
 import br.com.dio.board.entity.BoardColumnEntity;
 import br.com.dio.board.entity.BoardColumnKindEnum;
 import br.com.dio.board.entity.BoardEntity;
 import br.com.dio.board.service.BoardQueryService;
 import br.com.dio.board.service.BoardService;
-import jdk.internal.misc.OSEnvironment;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class MainMenu {
 
     private final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
+    // ...existing code...
     public static void main(String[] args) throws SQLException {
-        OSEnvironment InitDatabase = new OSEnvironment();
         InitDatabase.initialize();
         new MainMenu().execute();
     }

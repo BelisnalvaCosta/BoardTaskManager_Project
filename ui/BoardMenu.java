@@ -9,6 +9,7 @@ import br.com.dio.board.service.BoardQueryService;
 import br.com.dio.board.service.CardQueryService;
 import br.com.dio.board.service.CardService;
 
+import java.io.PrintStream;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -19,6 +20,12 @@ public class BoardMenu {
 
     public BoardMenu(BoardEntity entity) {
         this.entity = entity;
+    }
+
+    // ...existing code...
+    private static void accept(Object card) {
+        CardEntity c = (CardEntity) card;
+        System.out.printf("- Card %d: %s%n", c.getId(), c.getTitle());
     }
 
     public void execute() {
@@ -64,6 +71,8 @@ public class BoardMenu {
 
         try (var conn = ConnectionConfig.getConnection()) {
             new CardService(conn).create(card);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -136,7 +145,7 @@ public class BoardMenu {
             var column = new BoardColumnQueryService(conn).findById(id);
             column.ifPresent(c -> {
                 System.out.printf("Coluna: %s (%s)\n", c.getName(), c.getKind());
-                c.getCards().forEach(card -> System.out.printf("- Card %d: %s\n", card.getId(), card.getTitle()));
+                c.getCards().forEach(BoardMenu::accept);
             });
         }
     }
