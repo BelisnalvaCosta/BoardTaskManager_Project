@@ -53,9 +53,6 @@ src/
 4. **Banco de Dados:**  
    O banco será criado automaticamente na raiz do projeto (`board.db`). O script `schema.sql` define as tabelas necessárias.
 
-5. **Interface Web:**  
-   Abra o arquivo [`src/main/java/br/com/dio/board/web/index.html`](src/main/java/br/com/dio/board/web/index.html) no navegador para visualizar um board de exemplo (não conectado ao banco, apenas visual).
-
 ## Tecnologias Utilizadas
 
 - **Java 17**
